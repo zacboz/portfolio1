@@ -66,17 +66,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary {
     .button-variant(white; @theme-primary; @theme-primary);
-    .heading-font;
+    // .heading-font;
+    font-family: @lato;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     font-weight: 700;
+    border-radius: 2px;
 }
 
 .btn-xl {
     .button-variant(white; @theme-primary; @theme-primary);
-    .heading-font;
-    font-weight: 700;
-    border-radius: 3px;
-    font-size: 18px;
-    padding: 20px 40px;
+    // .heading-font;
+    font-family: @lato;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border-radius: 2px;
+    font-size: 16px;
+    padding: 15px 30px;
 }
 
 // Custom Navigation Bar
@@ -243,13 +249,14 @@ header {
 section {
     padding: 100px 0;
     h2.section-heading {
-      font-family: @lato;
+        font-family: @lato;
+        font-weight: 600;
         font-size: 40px;
         margin-top: 0;
         margin-bottom: 15px;
     }
     h3.section-subheading {
-        font-size: 16px;
+        font-size: 20px;
         // .serif-font;
         font-family: @shadow;
         text-transform: none;
@@ -278,9 +285,13 @@ section {
 .skills {
   font-size: 100px;
 }
-.bottom-img{
-  margin-bottom: 0px;
+
+@media(min-width:768px){
+  .bottom-img{
+    margin-bottom: 0px;
+  }
 }
+
 
 // Portfolio Section
 
@@ -332,13 +343,16 @@ section {
             text-align: center;
             padding: 25px;
             h4 {
+                font-family: @lato;
+                font-weight: 600;
                 text-transform: none;
                 margin: 0;
             }
             p {
-                .serif-font;
-                font-style: italic;
-                font-size: 16px;
+                // .serif-font;
+                font-family: @shadow;
+                // font-style: italic;
+                font-size: 18px;
                 margin: 0;
             }
         }
@@ -546,6 +560,8 @@ section {
     margin-bottom: 50px;
     img {
         margin: 0 auto;
+        // max-height: ;
+        max-width: 70%;
         border: 7px solid white;
     }
     h4 {
@@ -573,9 +589,11 @@ aside.clients {
 // Contact Section
 
 section#contact {
-    background-color: @gray-darker;
-    background-image: url('../img/map-image.png');
-    background-position: center;
+    // background-color: @gray-darker;
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('../img/deskandmac.jpg');
+    background-position: center center;
+    background-size: cover;
+    // background-attachment: scroll;
     background-repeat: no-repeat;
     .section-heading {
         color: white;
@@ -584,13 +602,15 @@ section#contact {
         margin-bottom: 25px;
         input,
         textarea {
-            padding: 20px;
+            padding: 15px;
+            border-radius: 0;
+            border: none;
         }
         input.form-control {
             height: auto;
         }
         textarea.form-control {
-            height: 236px;
+            height: 160px;
         }
     }
     .form-control:focus {
@@ -621,6 +641,66 @@ section#contact {
         color: @theme-danger;
     }
 }
+
+.contact-me {
+  color: white;
+  font-family: @lato;
+  letter-spacing: 1.5px;
+  text-align: left;
+  h4{
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: @lato;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .personal-email {
+    margin-top: 20px;
+    // color: @theme-primary;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .personal-resume{
+    margin-top: 20px;
+  }
+  ul {
+    margin-top: 70px;
+  }
+  // .fa {
+  //   font-size: 28px;
+  // }
+}
+@media(min-width:768px) {
+  ul.big-social-buttons{
+    .tablet {
+    margin-right: 16px;
+    }
+  }
+}
+
+@media(max-width:766px) {
+  .contact-me{
+    text-align: center;
+    margin-top: 30px;
+  }
+  ul.list-inline{
+    margin-left: 0;
+    .tablet {
+    margin-right: 15px;
+    }
+  }
+}
+
+
+
+
 
 // Footer
 
@@ -668,6 +748,30 @@ ul.social-buttons {
     }
 }
 
+ul.big-social-buttons {
+  margin-bottom: 0;
+  li {
+    margin-right: 30px;
+      a {
+          display: block;
+          font-size: 28px;
+          line-height: 40px;
+          color: @theme-primary;
+          outline: none;
+          -webkit-transition: all 0.3s;
+          -moz-transition: all 0.3s;
+          transition: all 0.3s;
+          &:hover,
+          &:focus,
+          &:active {
+              // background-color: @theme-primary;
+              color: white;
+          }
+      }
+  }
+
+}
+
 .btn:focus,
 .btn:active,
 .btn.active,
@@ -691,21 +795,41 @@ ul.social-buttons {
         padding: 100px 0;
         text-align: center;
         h2 {
+            font-family: @lato;
+            text-transform: uppercase;
+            font-weight: 600;
             margin-bottom: 15px;
             font-size: 3em;
         }
         p {
+            color: @gray-light;
+            font-family: @lato;
+            font-weight: 500;
+            letter-spacing: 1.5px;
             margin-bottom: 30px;
+            strong {
+              color: black;
+            }
         }
         p.item-intro {
             margin: 20px 0 30px;
-            .serif-font;
-            font-style: italic;
-            font-size: 16px;
+            // .serif-font;
+            font-family: @shadow;
+            // font-style: italic;
+            font-size: 18px;
+        }
+        p.desc-view{
+            text-transform: uppercase;
+            color: black;
         }
         ul.list-inline {
             margin-bottom: 30px;
             margin-top: 0;
+        }
+        li {
+          color: @gray-light;
+          font-family: @lato;
+          letter-spacing: 1.5px;
         }
         img {
             margin-bottom: 30px;
