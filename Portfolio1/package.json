@@ -2,6 +2,7 @@
   "name": "agency",
   "title": "Agency",
   "version": "3.3.7+1",
+  "main": "server.js",
   "homepage": "http://startbootstrap.com/template-overviews/agency",
   "author": "Start Bootstrap",
   "license": {
@@ -24,5 +25,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/BlackrockDigital/startbootstrap-agency.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-session": "^1.15.1"
   }
 }
