@@ -1,4 +1,4 @@
 module.exports = {
   sessionSecret: 'keyboard cat',
-  port: 3070
+  port: 3080
 }
