@@ -325,7 +325,7 @@ section h3.section-subheading {
   text-transform: none;
 }
 .skills {
-  font-size: 100px;
+  font-size: 70px;
 }
 @media (min-width: 768px) {
   .bottom-img {
@@ -572,7 +572,7 @@ section h3.section-subheading {
 }
 .team-member img {
   margin: 0 auto;
-  max-width: 70%;
+  max-width: 55%;
   border: 7px solid white;
 }
 .team-member h4 {

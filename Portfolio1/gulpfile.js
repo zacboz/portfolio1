@@ -7,6 +7,8 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
+var cachebust = require('gulp-cache-bust');
+
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -91,6 +93,12 @@ gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() 
     gulp.watch('./public/*.html', browserSync.reload);
     gulp.watch('./public/js/**/*.js', browserSync.reload);
 });
+
+gulp.src('./public/*.html')
+    .pipe(cachebust({
+        type: 'timestamp'
+    }))
+    .pipe(gulp.dest('./public'));
 
 // Compiles SCSS files from /scss into /css
 // NOTE: This theme uses LESS by default. To swtich to SCSS you will need to update this gulpfile by changing the 'less' tasks to run 'sass'!
